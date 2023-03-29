@@ -37,8 +37,8 @@ public class Main {
 
         father.addParents( granpy, granny, father );
         System.out.println("4: ");
-        granpy.getGrandchildren();
-
+        System.out.println( granpy.getGrandchildren().get(0).getName() );
+        System.out.println();
 
         father.addPet(father, pet1);
         child2.addPet(child2, pet2);

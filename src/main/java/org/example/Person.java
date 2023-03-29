@@ -165,17 +165,18 @@ void addParents(Person father, Person mother, Person child ){
         person.setSiblings(siblings);
     }
 
-    void getGrandchildren(){
+    public List<Person> getGrandchildren(){
+        List<Person> children = new ArrayList<>();
         if(getChildren() != null){
             for (Person parent : getChildren()){
                 if(parent.getChildren() != null){
                     for ( Person grandChild : parent.getChildren()){
-                        System.out.println( grandChild.getName() );
+                        children.add(grandChild);
                     }
                 }
             }
         }
-//        return grandChild.getName();
+        return children;
     }
 
     void getFamilyTree(){

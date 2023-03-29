@@ -62,21 +62,21 @@ class PersonTest {
         assertEquals(25, numOfSiblings);
     }
 
-//    @Test
-//    @DisplayName("")
-//    void getGrandchildren(){
-//        // Arrange:
-//        Person person0 = new Person("Optimus", "Prime", 180, "Male");
-//        Person person1 = new Person("Mother", "Prime", 121, "Female");
-//        Person person2 = new Person("Bumble", "Bee", 75, "Male");
-//        Person person3 = new Person("Mommy", "Bee", 65, "Female");
-//        Person person4 = new Person("Tiny", "Bee", 12, "Female");
-//        person4.addParents(person2, person3, person4);
-//        person2.addParents(person0, person1, person2);
-//        person4.addParents(person2, person3, person4);
-//        // Act:
-//
-//        // Assert:
-//        assertEquals("Tiny", person0.getGrandchildren() );
-//    }
+    @Test
+    @DisplayName("Grandchild should be added to person")
+    void getGrandchildren(){
+        // Arrange:
+        Person person0 = new Person("Optimus", "Prime", 180, "Male");
+        Person person1 = new Person("Mother", "Prime", 121, "Female");
+        Person person2 = new Person("Bumble", "Bee", 75, "Male");
+        Person person3 = new Person("Mommy", "Bee", 65, "Female");
+        Person person4 = new Person("Tiny", "Bee", 12, "Female");
+        person4.addParents(person2, person3, person4);
+        person2.addParents(person0, person1, person2);
+        person4.addParents(person2, person3, person4);
+        // Act:
+        String grandChild = person0.getGrandchildren().get(0).getName();
+        // Assert:
+        assertEquals("Tiny", grandChild );
+    }
 }
